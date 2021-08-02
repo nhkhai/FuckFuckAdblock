@@ -93,13 +93,18 @@
         }
     };
 
-    var fuck = new FuckAdBlock();
-    for (var field in fuck) {
-        Object.defineProperty(fuck, field, {value: fuck[field], configurable: false});
+    try {
+        var fuck = new FuckAdBlock();
+        for (var field in fuck) {
+            Object.defineProperty(fuck, field, {value: fuck[field], configurable: false});
+        }
+        Object.defineProperties(window, {fuckAdBlock : { value: fuck, enumerable: true, writable: false }});
+        Object.defineProperties(window, {blockAdBlock : { value: fuck, enumerable: true, writable: false }});
+        Object.defineProperties(window, {sniffAdBlock : { value: fuck, enumerable: true, writable: false }});
+        Object.defineProperties(window, {duckAdBlock : { value: fuck, enumerable: true, writable: false }}); 
+        Object.defineProperties(window, {FuckFuckFuckAdBlock : { value: fuck, enumerable: true, writable: false }});
     }
-    Object.defineProperties(window, {fuckAdBlock : { value: fuck, enumerable: true, writable: false }});
-    Object.defineProperties(window, {blockAdBlock : { value: fuck, enumerable: true, writable: false }});
-    Object.defineProperties(window, {sniffAdBlock : { value: fuck, enumerable: true, writable: false }});
-    Object.defineProperties(window, {duckAdBlock : { value: fuck, enumerable: true, writable: false }}); 
-    Object.defineProperties(window, {FuckFuckFuckAdBlock : { value: fuck, enumerable: true, writable: false }});
+    catch(e) {
+        console.error("Unable to fuck fuckAdBlock.  You're fucked.", e);
+    }
 })(window);
